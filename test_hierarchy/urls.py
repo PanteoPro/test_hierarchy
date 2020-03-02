@@ -18,6 +18,6 @@ from django.urls import path, include, url
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include('myapp1.urls')),
+    path('ge/', include('myapp1.urls')),
     url(r'^chained/', include('chained_selects.urls')),
 ]
