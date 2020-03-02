@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %} My WebSite {% endblock %}
+
+{% block content %}
+
+    {% for a in articles %}
+
+        <a href="{% url 'articles:promo' a.id %}"><h1>Title: {{a.title}}</h1></a>
+        <h2>Cut Body: {{a.cut_body}}</h2>
+        <h3>Article_Id: {{a.id}}</h3>
+        <h4>Author: {{a.author}}</h4>
+        <h4>Author_Id: {{a.author_id}}</h4>
+        <h4>Category: {{a.category}}</h4>
+        <h4>Category_ID: {{a.category_id}}</h4>
+
+    {% endfor %}
+
+{% endblock %}
+

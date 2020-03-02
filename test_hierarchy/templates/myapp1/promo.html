@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block title %} My WebSite {% endblock %}
+
+{% block content %}
+
+    <h1>Article Title {{article.title}}</h1>
+    <h2>Cut Body: {{article.cut_body}}</h2>
+    <h2>Body: {{article.body}}</h2>
+    <h3>Article_Id: {{article.id}}</h3>
+
+    {% for t in themes %}
+        <ul>{{t.id}}. {{t.title}} {{t.count_steps}}
+            {% for s in t.queryset_steps %}
+            <li style="list-style-type: none">{{t.id}}.{{forloop.counter}} {{s}}</li>
+            {% endfor %}
+        </ul>
+    {% endfor %}
+
+
+{% endblock %}
+
